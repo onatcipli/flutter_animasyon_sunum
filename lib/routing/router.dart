@@ -4,6 +4,7 @@ import 'package:animation_presentation/views/home/home_view.dart';
 import 'package:animation_presentation/views/layout_slide/center_flexible_expanded.dart';
 import 'package:animation_presentation/views/layout_slide/flexible_expanded_layout.dart';
 import 'package:animation_presentation/views/layout_slide/row_column_layout.dart';
+import 'package:animation_presentation/views/layout_slide/stack_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -20,6 +21,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(FlexibleExpandedLayout(), settings.name);
     case CenterLayoutPath:
       return _getPageRoute(CenterLayout(), settings.name);
+    case StackLayoutPath:
+      return _getPageRoute(StackLayout(), settings.name);
     default:
   }
 }

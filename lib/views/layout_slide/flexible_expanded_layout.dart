@@ -23,7 +23,28 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Expanded(
-              child: Container(),
+              flex: 5,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text('Flexible and Expanded'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text('Flexible and Expanded açıklama'),
+                    ),
+                  ),
+                ],
+              ),
             ),
             MobileDevice(
               child: layoutType.toLowerCase() == 'column'

@@ -41,7 +41,30 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Expanded(
-              child: Container(),
+              flex: 5,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: layoutType == 'Row' ? Text("Row") : Text('Column'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: layoutType == 'Row'
+                          ? Text("Yatay bir widget dizisi oluşturur.")
+                          : Text('Dikey bir widget dizisi oluşturur.'),
+                    ),
+                  ),
+                ],
+              ),
             ),
             MobileDevice(
               child: LayoutGenerator(
@@ -51,7 +74,7 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                 layoutType: layoutType,
               ),
             ),
-            Expanded(
+            Flexible(
               flex: 1,
               child: Container(),
             ),
@@ -157,6 +180,7 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
               ],
             ),
             Expanded(
+              flex: 1,
               child: Container(),
             ),
           ],

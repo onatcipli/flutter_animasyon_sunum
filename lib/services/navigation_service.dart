@@ -34,7 +34,8 @@ class NavigationService {
     FirstAnimation,
     RowAndColumn,
     FlexibleExpanded,
-    CenterLayoutPath
+    CenterLayoutPath,
+    StackLayoutPath
   ];
   int currentIndex = 0;
 }

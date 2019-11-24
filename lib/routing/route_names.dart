@@ -7,3 +7,5 @@ const String RowAndColumn = 'rowAndColumn';
 const String FlexibleExpanded = 'flexibleExpanded';
 
 const String CenterLayoutPath = 'centerLayout';
+
+const String StackLayoutPath = 'stackLayout';
