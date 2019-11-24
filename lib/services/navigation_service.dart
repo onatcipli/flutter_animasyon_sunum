@@ -35,7 +35,8 @@ class NavigationService {
     RowAndColumn,
     FlexibleExpanded,
     CenterLayoutPath,
-    StackLayoutPath
+    StackLayoutPath,
+    WhatsAppClonePath,
   ];
   int currentIndex = 0;
 }

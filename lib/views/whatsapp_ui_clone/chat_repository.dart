@@ -1,0 +1,62 @@
+class Chat {
+  int id;
+  String name;
+  String image;
+  String time;
+  String lastMessage;
+  bool isSeen;
+
+  Chat({
+    this.id,
+    this.name,
+    this.image,
+    this.time,
+    this.lastMessage,
+    this.isSeen,
+  });
+
+  factory Chat.fromJson(Map<String, dynamic> json) => Chat(
+        id: json["id"],
+        name: json["name"],
+        image: json["image"],
+        time: json["time"],
+        lastMessage: json["lastMessage"],
+        isSeen: json["isSeen"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+        "image": image,
+        "time": time,
+        "lastMessage": lastMessage,
+        "isSeen": isSeen,
+      };
+}
+
+List<Chat> chats = [
+  Chat(
+      id: 0,
+      name: 'Mirkan Çalışkan',
+      time: '13:00',
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhv4QVnYLBBbGGPxi8Zgr1YL9j_AR44XU0ifZBKXmGBMSIw1SS&s",
+      isSeen: false,
+      lastMessage: "Bro bu sayfalar hep kayıyor"),
+  Chat(
+      id: 1,
+      name: 'Gazihan Alankuş',
+      time: '10:00',
+      image:
+          "https://odin-oasis.izmirekonomi.edu.tr/images/photos/5e57d811756b8ab5f4f748a620ff72e3102a2f21.jpg",
+      isSeen: true,
+      lastMessage: "Flutter İzmir Etkinliği için sunumun hazır mı ?"),
+  Chat(
+      id: 2,
+      name: 'Can Taşpınar',
+      time: '14:00',
+      image:
+          "https://miro.medium.com/fit/c/256/256/1*piA_JsteMHIyYko4y4uMTw.jpeg",
+      isSeen: false,
+      lastMessage: "Kanka provider lazımsa sarayım"),
+];
