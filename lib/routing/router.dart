@@ -1,6 +1,7 @@
 import 'package:animation_presentation/routing/route_names.dart';
 import 'package:animation_presentation/views/first_animation/first_animation_view.dart';
 import 'package:animation_presentation/views/home/home_view.dart';
+import 'package:animation_presentation/views/row_and_column/row_and_column.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -11,6 +12,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       break;
     case FirstAnimation:
       return _getPageRoute(FirstAnimationView(), settings.name);
+    case RowAndColumn:
+      return _getPageRoute(RowColumnLayout(), settings.name);
     default:
   }
 }
@@ -22,6 +25,7 @@ PageRoute _getPageRoute(Widget child, String routeName) {
 class _FadeRoute extends PageRouteBuilder {
   final Widget child;
   final String routeName;
+
   _FadeRoute({this.child, this.routeName})
       : super(
           pageBuilder: (

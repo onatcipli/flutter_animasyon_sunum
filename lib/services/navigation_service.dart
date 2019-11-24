@@ -29,6 +29,6 @@ class NavigationService {
   }
 
   // Add new routes here, also in [router.dart]
-  List<String> routes = [HomeRoute, FirstAnimation];
+  List<String> routes = [HomeRoute, FirstAnimation, RowAndColumn];
   int currentIndex = 0;
 }
