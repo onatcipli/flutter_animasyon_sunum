@@ -12,17 +12,12 @@ class SlideStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: <Widget>[
-        Transform.rotate(
-          angle: pi / 72,
-          child: CustomPaint(
-            foregroundPainter: SlidePainter(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: containerColor,
-                borderRadius: BorderRadius.circular(24),
-              ),
-            ),
+        Container(
+          decoration: BoxDecoration(
+            color: containerColor,
+            borderRadius: BorderRadius.circular(24),
           ),
         ),
         ...children
