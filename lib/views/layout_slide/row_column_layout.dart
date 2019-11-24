@@ -1,5 +1,7 @@
+import 'package:animation_presentation/views/layout_slide/mobile_device.dart';
 import 'package:animation_presentation/widgets/layout_generator.dart';
 import 'package:animation_presentation/widgets/slide_stack.dart/slide_stack.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RowColumnLayout extends StatefulWidget {
@@ -15,6 +17,13 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
   MainAxisSize _mainAxisSize;
 
   String layoutType = 'Column';
+
+  List<CrossAxisAlignment> crossValues = [
+    CrossAxisAlignment.start,
+    CrossAxisAlignment.stretch,
+    CrossAxisAlignment.center,
+    CrossAxisAlignment.end
+  ];
 
   @override
   void initState() {
@@ -34,10 +43,7 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
             Expanded(
               child: Container(),
             ),
-            Container(
-              height: 667,
-              width: 375,
-              decoration: BoxDecoration(border: Border.all(width: 1)),
+            MobileDevice(
               child: LayoutGenerator(
                 mainAxisSize: _mainAxisSize,
                 crossAxisAlignment: _crossAxisAlignment,
@@ -116,9 +122,8 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                       _crossAxisAlignment = newValue;
                     });
                   },
-                  items: CrossAxisAlignment.values
-                      .map<DropdownMenuItem<CrossAxisAlignment>>(
-                          (CrossAxisAlignment value) {
+                  items: crossValues.map<DropdownMenuItem<CrossAxisAlignment>>(
+                      (CrossAxisAlignment value) {
                     return DropdownMenuItem<CrossAxisAlignment>(
                       value: value,
                       child: Text(value.toString()),

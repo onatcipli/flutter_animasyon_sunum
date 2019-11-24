@@ -1,3 +1,4 @@
+import 'package:animation_presentation/views/layout_slide/mobile_device.dart';
 import 'package:animation_presentation/widgets/slide_stack.dart/slide_stack.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,6 @@ class FlexibleExpandedLayout extends StatefulWidget {
 }
 
 class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
-
   String layoutType = 'Column';
 
   int firstFlex = 1;
@@ -25,71 +25,68 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
             Expanded(
               child: Container(),
             ),
-            Container(
-              height: 667,
-              width: 375,
-              decoration: BoxDecoration(border: Border.all(width: 1)),
+            MobileDevice(
               child: layoutType.toLowerCase() == 'column'
                   ? Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Flexible(
-                    flex: firstFlex,
-                    fit: FlexFit.tight,
-                    child: Container(
-                        color: Colors.blue,
-                        child: Text('flex: $firstFlex')),
-                  ),
-                  Expanded(
-                    flex: secondFlex,
-                    child: Container(
-                        color: Colors.yellow,
-                        child: Text('flex: $secondFlex')),
-                  ),
-                  Expanded(
-                    flex: thirdFlex,
-                    child: Container(
-                        color: Colors.red,
-                        child: Text('flex: $thirdFlex')),
-                  ),
-                  Expanded(
-                    flex: fourthFlex,
-                    child: Container(
-                        color: Colors.orange,
-                        child: Text('flex: $fourthFlex')),
-                  ),
-                ],
-              )
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Flexible(
+                          flex: firstFlex,
+                          fit: FlexFit.tight,
+                          child: Container(
+                              color: Colors.blue,
+                              child: Text('flex: $firstFlex')),
+                        ),
+                        Expanded(
+                          flex: secondFlex,
+                          child: Container(
+                              color: Colors.yellow,
+                              child: Text('flex: $secondFlex')),
+                        ),
+                        Expanded(
+                          flex: thirdFlex,
+                          child: Container(
+                              color: Colors.red,
+                              child: Text('flex: $thirdFlex')),
+                        ),
+                        Expanded(
+                          flex: fourthFlex,
+                          child: Container(
+                              color: Colors.orange,
+                              child: Text('flex: $fourthFlex')),
+                        ),
+                      ],
+                    )
                   : Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Flexible(
-                    flex: firstFlex,
-                    fit: FlexFit.tight,
-                    child: Container(
-                        color: Colors.blue,
-                        child: Text('flex: $firstFlex')),
-                  ),
-                  Expanded(
-                    flex: secondFlex,
-                    child: Container(
-                        color: Colors.yellow,
-                        child: Text('flex: $secondFlex')),
-                  ),
-                  Expanded(
-                    flex: thirdFlex,
-                    child: Container(
-                        color: Colors.red,
-                        child: Text('flex: $thirdFlex')),
-                  ),
-                  Expanded(
-                    flex: fourthFlex,
-                    child: Container(
-                        color: Colors.orange,
-                        child: Text('flex: $fourthFlex')),
-                  ),
-                ],
-              ),
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Flexible(
+                          flex: firstFlex,
+                          fit: FlexFit.tight,
+                          child: Container(
+                              color: Colors.blue,
+                              child: Text('flex: $firstFlex')),
+                        ),
+                        Expanded(
+                          flex: secondFlex,
+                          child: Container(
+                              color: Colors.yellow,
+                              child: Text('flex: $secondFlex')),
+                        ),
+                        Expanded(
+                          flex: thirdFlex,
+                          child: Container(
+                              color: Colors.red,
+                              child: Text('flex: $thirdFlex')),
+                        ),
+                        Expanded(
+                          flex: fourthFlex,
+                          child: Container(
+                              color: Colors.orange,
+                              child: Text('flex: $fourthFlex')),
+                        ),
+                      ],
+                    ),
             ),
             Expanded(
               child: Container(),
@@ -137,8 +134,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                       firstFlex = newValue;
                     });
                   },
-                  items: [1, 2, 3, 4]
-                      .map<DropdownMenuItem<int>>((int value) {
+                  items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                     return DropdownMenuItem<int>(
                       value: value,
                       child: Text('first flex: ' + value.toString()),
@@ -160,8 +156,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                       secondFlex = newValue;
                     });
                   },
-                  items: [1, 2, 3, 4]
-                      .map<DropdownMenuItem<int>>((int value) {
+                  items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                     return DropdownMenuItem<int>(
                       value: value,
                       child: Text('second flex : ' + value.toString()),
@@ -183,8 +178,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                       thirdFlex = newValue;
                     });
                   },
-                  items: [1, 2, 3, 4]
-                      .map<DropdownMenuItem<int>>((int value) {
+                  items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                     return DropdownMenuItem<int>(
                       value: value,
                       child: Text('third flex : ' + value.toString()),
@@ -206,8 +200,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                       fourthFlex = newValue;
                     });
                   },
-                  items: [1, 2, 3, 4]
-                      .map<DropdownMenuItem<int>>((int value) {
+                  items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                     return DropdownMenuItem<int>(
                       value: value,
                       child: Text('fourth flex : ' + value.toString()),
