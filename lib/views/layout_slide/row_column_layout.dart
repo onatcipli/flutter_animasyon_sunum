@@ -16,11 +16,6 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
 
   String layoutType = 'Column';
 
-  int firstFlex = 1;
-  int secondFlex = 2;
-  int thirdFlex = 3;
-  int fourthFlex = 4;
-
   @override
   void initState() {
     _mainAxisAlignment = MainAxisAlignment.start;
