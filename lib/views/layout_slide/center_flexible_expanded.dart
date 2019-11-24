@@ -8,7 +8,13 @@ class CenterLayout extends StatefulWidget {
 }
 
 class _CenterLayoutState extends State<CenterLayout> {
-  List<String> sections = ['Center', 'Flexible', 'Expanded', 'Container'];
+  List<String> sections = [
+    'Center',
+    'Flexible',
+    'Expanded',
+    'Container',
+    'Container in a Column'
+  ];
 
   String _state;
 
@@ -30,9 +36,7 @@ class _CenterLayoutState extends State<CenterLayout> {
             ),
             MobileDevice(
               child: _getChild(
-                child: Container(
-                    color: Colors.orange,
-                    child: Text('MyText')),
+                child: Container(color: Colors.orange, child: Text('MyText')),
               ),
             ),
             Expanded(
@@ -105,6 +109,17 @@ class _CenterLayoutState extends State<CenterLayout> {
     } else if (_state == 'Container') {
       return Container(
         child: child,
+      );
+    } else if (_state == 'Container in a Column') {
+      return Column(
+        children: <Widget>[
+          Text('Other widgets'),
+          Text('Other widgets'),
+          Text('Other widgets'),
+          Container(
+            child: child,
+          ),
+        ],
       );
     } else {
       return child;
