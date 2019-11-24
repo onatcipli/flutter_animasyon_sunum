@@ -24,7 +24,7 @@ class _Title extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Text(
-          "Flutter'da Animasyonlar ve\nCustom Painting",
+          "Flutter layout: WhatsApp kullanıcı arabirimi",
           style: Theme.of(context).textTheme.title,
         ),
       ),

@@ -44,7 +44,7 @@ class LayoutGenerator extends StatelessWidget {
     } else {
       return Scaffold(
         body: Container(
-          color: Colors.yellow,
+          color: Colors.orange,
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
             crossAxisAlignment: crossAxisAlignment,

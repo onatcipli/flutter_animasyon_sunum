@@ -40,7 +40,11 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Text('Flexible and Expanded açıklama'),
+                      child: Text('''
+                      Flexible eğer hiç bir özellik belirtilmediyse çocuğu kadar alan kaplar
+                      Expanded Row veya Column içindeki kalan alanı kaplar
+                      Expanded ve Flexible'ın flex özellikleride Row yada Column'ı belli oranlarda kullanmaya yarar.
+                      '''),
                     ),
                   ),
                 ],
