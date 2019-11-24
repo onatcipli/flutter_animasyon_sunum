@@ -1,6 +1,7 @@
 import 'package:animation_presentation/routing/route_names.dart';
 import 'package:animation_presentation/views/first_animation/first_animation_view.dart';
 import 'package:animation_presentation/views/home/home_view.dart';
+import 'package:animation_presentation/views/layout_slide/center_flexible_expanded.dart';
 import 'package:animation_presentation/views/layout_slide/flexible_expanded_layout.dart';
 import 'package:animation_presentation/views/layout_slide/row_column_layout.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(RowColumnLayout(), settings.name);
     case FlexibleExpanded:
       return _getPageRoute(FlexibleExpandedLayout(), settings.name);
+    case CenterLayoutPath:
+      return _getPageRoute(CenterLayout(), settings.name);
     default:
   }
 }

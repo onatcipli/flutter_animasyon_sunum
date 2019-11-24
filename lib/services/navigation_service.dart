@@ -33,7 +33,8 @@ class NavigationService {
     HomeRoute,
     FirstAnimation,
     RowAndColumn,
-    FlexibleExpanded
+    FlexibleExpanded,
+    CenterLayoutPath
   ];
   int currentIndex = 0;
 }
