@@ -9,7 +9,7 @@ class WhatsAppCloneSlide extends StatelessWidget {
     return SlideStack(
       children: <Widget>[
         MobileDevice(
-          child: WhatsAppClone(),
+          child: Text('WhatsApp Clone time'),
         )
       ],
     );

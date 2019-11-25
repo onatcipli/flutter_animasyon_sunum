@@ -5,7 +5,7 @@ import 'package:animation_presentation/views/layout_slide/center_flexible_expand
 import 'package:animation_presentation/views/layout_slide/flexible_expanded_layout.dart';
 import 'package:animation_presentation/views/layout_slide/row_column_layout.dart';
 import 'package:animation_presentation/views/layout_slide/stack_layout.dart';
-import 'package:animation_presentation/views/whatsapp_ui_clone/whatsapp_clone.dart';
+import 'package:animation_presentation/views/layout_slide/whatsapp_clone_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -25,7 +25,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case StackLayoutPath:
       return _getPageRoute(StackLayout(), settings.name);
     case WhatsAppClonePath:
-      return _getPageRoute(WhatsAppClone(), settings.name);
+      return _getPageRoute(WhatsAppCloneSlide(), settings.name);
     default:
   }
 }
