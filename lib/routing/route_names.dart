@@ -1,6 +1,6 @@
 const String HomeRoute = 'home';
 
-const String FirstAnimation = 'firstAnimation';
+const String IntroPath = 'introPath';
 
 const String RowAndColumn = 'rowAndColumn';
 

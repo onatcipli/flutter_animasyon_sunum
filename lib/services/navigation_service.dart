@@ -31,7 +31,7 @@ class NavigationService {
   // Add new routes here, also in [router.dart]
   List<String> routes = [
     HomeRoute,
-    FirstAnimation,
+    IntroPath,
     RowAndColumn,
     FlexibleExpanded,
     CenterLayoutPath,
