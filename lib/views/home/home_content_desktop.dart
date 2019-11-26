@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:animation_presentation/widgets/slide_stack.dart/slide_stack.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +22,7 @@ class _Title extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Text(
-          "Flutter layout: WhatsApp kullanıcı arabirimi",
+          "Flutter layout: WhatsApp Kullanıcı Arabirimi",
           style: Theme.of(context).textTheme.title,
         ),
       ),

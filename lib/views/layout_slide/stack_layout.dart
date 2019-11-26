@@ -55,7 +55,7 @@ class _StackLayoutState extends State<StackLayout> {
                     padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Text('stack acıklama'),
+                      child: Text("Stack widget'ı sayesinde istediğimiz widget'ları üst üste koyabiliyoruz"),
                     ),
                   ),
                 ],

@@ -4,6 +4,8 @@ const String IntroPath = 'introPath';
 
 const String RowAndColumn = 'rowAndColumn';
 
+const String GridViewPath = 'gridViewPath';
+
 const String FlexibleExpanded = 'flexibleExpanded';
 
 const String CenterLayoutPath = 'centerLayout';

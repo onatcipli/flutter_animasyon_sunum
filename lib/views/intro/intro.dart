@@ -7,54 +7,60 @@ class IntroDart extends StatelessWidget {
     return SlideStack(
       children: <Widget>[
         Align(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Flutter Layout konuları',
-                style: Theme.of(context).textTheme.title,
-              ),
-              Text(
-                '- Row',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Column',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Stack',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Expanded, Flexible',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- FittedBox',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- LayoutBuilder',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Center',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Align',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Positioned',
-                style: TextStyle(fontSize: 40),
-              ),
-              Text(
-                '- Scrollables',
-                style: TextStyle(fontSize: 40),
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Flutter Layout Widgetları',
+                  style: Theme.of(context).textTheme.title,
+                ),
+                Text(
+                  '- Row',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Column',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Stack',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- GridView',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Expanded, Flexible',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- FittedBox',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- LayoutBuilder',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Center',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Align',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Positioned',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  '- Scrollables',
+                  style: TextStyle(fontSize: 40),
+                ),
+              ],
+            ),
           ),
         ),
       ],

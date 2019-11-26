@@ -33,9 +33,10 @@ class NavigationService {
     HomeRoute,
     IntroPath,
     RowAndColumn,
+    GridViewPath,
+    StackLayoutPath,
     FlexibleExpanded,
     CenterLayoutPath,
-    StackLayoutPath,
     WhatsAppClonePath,
   ];
   int currentIndex = 0;
