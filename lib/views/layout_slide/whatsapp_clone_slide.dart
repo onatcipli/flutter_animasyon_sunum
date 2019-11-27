@@ -1,5 +1,3 @@
-import 'package:animation_presentation/views/layout_slide/mobile_device.dart';
-import 'package:animation_presentation/views/whatsapp_ui_clone/wp_clone.dart';
 import 'package:animation_presentation/widgets/slide_stack.dart/slide_stack.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +6,9 @@ class WhatsAppCloneSlide extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideStack(
       children: <Widget>[
-        MobileDevice(
-          child: WhatsAppClone(),
+        Text(
+          'Live Coding: WhatsApp UI clone',
+          style: Theme.of(context).textTheme.title,
         )
       ],
     );

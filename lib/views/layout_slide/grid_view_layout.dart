@@ -42,23 +42,23 @@ class _GridViewLayoutState extends State<GridViewLayout> {
                     child: FittedBox(
                       fit: BoxFit.fitHeight,
                       child: Text('''
-                      GridView.count(
-                        crossAxisCount: $_crossAxisCount,
-                        children: List.generate(100, (index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              color: Colors.orange,
-                              child: Center(
-                                child: Text(
-                                  'Item \$index',
-                                  style: Theme.of(context).textTheme.headline,
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                      )
+  GridView.count(
+    crossAxisCount: $_crossAxisCount,
+    children: List.generate(100, (index) {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          color: Colors.orange,
+          child: Center(
+            child: Text(
+              'Item \$index',
+              style: Theme.of(context).textTheme.headline,
+            ),
+          ),
+        ),
+      );
+    }),
+  )
                       '''),
                     ),
                   ),

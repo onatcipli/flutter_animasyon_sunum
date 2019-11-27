@@ -55,32 +55,25 @@ class _StackLayoutState extends State<StackLayout> {
                     child: FittedBox(
                       fit: BoxFit.fitHeight,
                       child: Text('''
-                      Stack widget'ı sayesinde istediğimiz widget'ları üst üste koyabiliyoruz
-                      
-                      Stack(
-                        fit: ${_stackFit.toString()},
-                        alignment: ${_alignment.toString()},
-                        children: <Widget>[
-                          Container(
-                            height: 200,
-                            width: 200,
-                            color: Colors.yellow,
-                            child: Text('First Child of the Stack'),
-                          ),
-                          Container(
-                            height: 150,
-                            width: 150,
-                            color: Colors.blue,
-                            child: Text('Second'),
-                          ),
-                          Container(
-                            height: 100,
-                            width: 100,
-                            color: Colors.orange,
-                            child: Text('Third'),
-                          ),
-                        ],
-                      )
+  Stack widget'ı sayesinde istediğimiz                
+  widget'ları üst üste koyabiliyoruz
+  
+  Stack(
+    fit: ${_stackFit.toString()},
+    alignment: ${_alignment.toString()},
+    children: <Widget>[
+      buildStackChild(size: 200,
+        text: "1",color: Colors.blue),
+      buildStackChild(size: 150,
+        text: "2", color: Colors.orange),
+      buildStackChild(size: 100,
+        text: "3", color: Colors.green),
+      Positioned(
+        bottom: 0,right: 0,
+        child: buildStackChild(size: 50,
+        text: "4", color: Colors.amber),),
+    ],
+  )
                       '''),
                     ),
                   ),
@@ -92,30 +85,19 @@ class _StackLayoutState extends State<StackLayout> {
                 fit: _stackFit,
                 alignment: _alignment,
                 children: <Widget>[
-                  Container(
-                    height: 200,
-                    width: 200,
-                    color: Colors.yellow,
-                    child: Text('First Child of the Stack'),
-                  ),
-                  Container(
-                    height: 150,
-                    width: 150,
-                    color: Colors.blue,
-                    child: Text('Second'),
-                  ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.orange,
-                    child: Text('Third'),
-                  ),
+                  buildStackChild(size: 200, text: "1", color: Colors.blue),
+                  buildStackChild(size: 150, text: "2", color: Colors.orange),
+                  buildStackChild(size: 100, text: "3", color: Colors.green),
+                  Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: buildStackChild(
+                          size: 50, text: "4", color: Colors.amber)),
                 ],
               ),
             ),
-            Flexible(
-              flex: 1,
-              child: Container(),
+            SizedBox(
+              width: 15,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -175,6 +157,15 @@ class _StackLayoutState extends State<StackLayout> {
           ],
         )
       ],
+    );
+  }
+
+  Container buildStackChild({String text, double size, Color color}) {
+    return Container(
+      height: size,
+      width: size,
+      color: color,
+      child: FittedBox(fit: BoxFit.fitHeight, child: Text(text)),
     );
   }
 }

@@ -51,56 +51,43 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                     padding: const EdgeInsets.all(18.0),
                     child: FittedBox(
                       fit: BoxFit.fitHeight,
-                      child: layoutType == 'Row' ? Text('Row  ') : Text('Column'),
+                      child: layoutType == 'Row' ? Text('Row   ') : Text('Column'),
                     ),
                   ),
                   Expanded(
                     child: FittedBox(
-                      fit: BoxFit.fitHeight,
-                      child: layoutType == 'Row' ? Text('''
-                          Yatay bir widget dizisi oluşturur.
-                          
-                          Row(
-                            mainAxisAlignment: ${_mainAxisAlignment.toString()},
-                            crossAxisAlignment: ${_crossAxisAlignment.toString()},
-                            mainAxisSize: ${_mainAxisSize.toString()},
-                            children: <Widget>[
-                              Icon(
-                                Icons.layers,
-                                size: 44,
-                              ),
-                              Icon(
-                                Icons.layers,
-                                size: 120,
-                              ),
-                              Icon(
-                                Icons.layers,
-                                size: 155,
-                              ),
-                            ],
-                          )
-                          ''') : Text('''
-                          Dikey bir widget dizisi oluşturur.
-                          
-                          Column(
-                            mainAxisAlignment: ${_mainAxisAlignment.toString()},
-                            crossAxisAlignment: ${_crossAxisAlignment.toString()},
-                            mainAxisSize: ${_mainAxisSize.toString()},
-                            children: <Widget>[
-                              Icon(
-                                Icons.layers,
-                                size: 44,
-                              ),
-                              Icon(
-                                Icons.layers,
-                                size: 120,
-                              ),
-                              Icon(
-                                Icons.layers,
-                                size: 155,
-                              ),
-                            ],
-                          )
+                      fit: BoxFit.fitWidth,
+                      child: layoutType == 'Row'
+                          ? Text(
+                              '''
+  Yatay bir widget dizisi oluşturur.
+  
+  Row(
+    mainAxisAlignment: ${_mainAxisAlignment.toString()},
+    crossAxisAlignment: ${_crossAxisAlignment.toString()},
+    mainAxisSize: ${_mainAxisSize.toString()},
+    children: <Widget>[
+      Icon(Icons.layers,size: 44,),
+      Icon(Icons.layers,size: 120,),
+      Icon(Icons.layers,size: 155,),
+    ],
+  )
+                          ''',
+                              textAlign: TextAlign.start,
+                            )
+                          : Text('''
+  Dikey bir widget dizisi oluşturur.
+  
+  Column(
+    mainAxisAlignment: ${_mainAxisAlignment.toString()},
+    crossAxisAlignment: ${_crossAxisAlignment.toString()},
+    mainAxisSize: ${_mainAxisSize.toString()},
+    children: <Widget>[
+      Icon(Icons.layers,size: 44,),
+      Icon(Icons.layers,size: 120,),
+      Icon(Icons.layers,size: 155,),
+    ],
+  )
                           '''),
                     ),
                   ),
@@ -115,9 +102,8 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                 layoutType: layoutType,
               ),
             ),
-            Flexible(
-              flex: 1,
-              child: Container(),
+            SizedBox(
+              width: 15,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
