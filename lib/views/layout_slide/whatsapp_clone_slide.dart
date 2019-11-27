@@ -7,7 +7,7 @@ class WhatsAppCloneSlide extends StatelessWidget {
     return SlideStack(
       children: <Widget>[
         Text(
-          'Live Coding: WhatsApp UI clone',
+          'Canlı Kodlama: WhatsApp',
           style: Theme.of(context).textTheme.title,
         )
       ],

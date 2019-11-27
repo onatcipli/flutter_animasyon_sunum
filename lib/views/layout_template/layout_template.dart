@@ -8,9 +8,28 @@ import 'package:animation_presentation/widgets/navigation_drawer/navigation_draw
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'dart:html' as html;
 
-class LayoutTemplate extends StatelessWidget {
+class LayoutTemplate extends StatefulWidget {
   const LayoutTemplate({Key key}) : super(key: key);
+
+  @override
+  _LayoutTemplateState createState() => _LayoutTemplateState();
+}
+
+class _LayoutTemplateState extends State<LayoutTemplate> {
+  @override
+  void initState() {
+    html.window.addEventListener('keydown', (event) {
+      html.KeyboardEvent kevent = event as html.KeyboardEvent;
+      if (kevent.keyCode == 37) {
+        Provider.of<NavigationService>(context).goBack();
+      } else if (kevent.keyCode == 39) {
+        Provider.of<NavigationService>(context).navigateToNext();
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
