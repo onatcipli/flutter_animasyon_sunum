@@ -50,17 +50,58 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: layoutType == 'Row' ? Text("Row") : Text('Column'),
+                      fit: BoxFit.fitHeight,
+                      child: layoutType == 'Row' ? Text('Row  ') : Text('Column'),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
+                  Expanded(
                     child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: layoutType == 'Row'
-                          ? Text("Yatay bir widget dizisi oluşturur.")
-                          : Text('Dikey bir widget dizisi oluşturur.'),
+                      fit: BoxFit.fitHeight,
+                      child: layoutType == 'Row' ? Text('''
+                          Yatay bir widget dizisi oluşturur.
+                          
+                          Row(
+                            mainAxisAlignment: ${_mainAxisAlignment.toString()},
+                            crossAxisAlignment: ${_crossAxisAlignment.toString()},
+                            mainAxisSize: ${_mainAxisSize.toString()},
+                            children: <Widget>[
+                              Icon(
+                                Icons.layers,
+                                size: 44,
+                              ),
+                              Icon(
+                                Icons.layers,
+                                size: 120,
+                              ),
+                              Icon(
+                                Icons.layers,
+                                size: 155,
+                              ),
+                            ],
+                          )
+                          ''') : Text('''
+                          Dikey bir widget dizisi oluşturur.
+                          
+                          Column(
+                            mainAxisAlignment: ${_mainAxisAlignment.toString()},
+                            crossAxisAlignment: ${_crossAxisAlignment.toString()},
+                            mainAxisSize: ${_mainAxisSize.toString()},
+                            children: <Widget>[
+                              Icon(
+                                Icons.layers,
+                                size: 44,
+                              ),
+                              Icon(
+                                Icons.layers,
+                                size: 120,
+                              ),
+                              Icon(
+                                Icons.layers,
+                                size: 155,
+                              ),
+                            ],
+                          )
+                          '''),
                     ),
                   ),
                 ],

@@ -47,15 +47,41 @@ class _StackLayoutState extends State<StackLayout> {
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text('Stack'),
+                      fit: BoxFit.fitHeight,
+                      child: Text('Stack      '),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(18, 0, 100, 18),
+                  Expanded(
                     child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text("Stack widget'ı sayesinde istediğimiz widget'ları üst üste koyabiliyoruz"),
+                      fit: BoxFit.fitHeight,
+                      child: Text('''
+                      Stack widget'ı sayesinde istediğimiz widget'ları üst üste koyabiliyoruz
+                      
+                      Stack(
+                        fit: ${_stackFit.toString()},
+                        alignment: ${_alignment.toString()},
+                        children: <Widget>[
+                          Container(
+                            height: 200,
+                            width: 200,
+                            color: Colors.yellow,
+                            child: Text('First Child of the Stack'),
+                          ),
+                          Container(
+                            height: 150,
+                            width: 150,
+                            color: Colors.blue,
+                            child: Text('Second'),
+                          ),
+                          Container(
+                            height: 100,
+                            width: 100,
+                            color: Colors.orange,
+                            child: Text('Third'),
+                          ),
+                        ],
+                      )
+                      '''),
                     ),
                   ),
                 ],
