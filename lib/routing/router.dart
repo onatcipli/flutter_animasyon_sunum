@@ -4,6 +4,7 @@ import 'package:animation_presentation/views/intro/intro.dart';
 import 'package:animation_presentation/views/layout_slide/center_flexible_expanded.dart';
 import 'package:animation_presentation/views/layout_slide/flexible_expanded_layout.dart';
 import 'package:animation_presentation/views/layout_slide/grid_view_layout.dart';
+import 'package:animation_presentation/views/layout_slide/list_view_layout.dart';
 import 'package:animation_presentation/views/layout_slide/row_column_layout.dart';
 import 'package:animation_presentation/views/layout_slide/stack_layout.dart';
 import 'package:animation_presentation/views/layout_slide/whatsapp_clone_slide.dart';
@@ -27,6 +28,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(StackLayout(), settings.name);
     case GridViewPath:
       return _getPageRoute(GridViewLayout(), settings.name);
+    case ListViewPath:
+      return _getPageRoute(ListViewLayout(), settings.name);
     case WhatsAppClonePath:
       return _getPageRoute(WhatsAppCloneSlide(), settings.name);
     default:

@@ -79,9 +79,12 @@ class _GridViewLayoutState extends State<GridViewLayout> {
                       child: Container(
                         color: Colors.orange,
                         child: Center(
-                          child: Text(
-                            'Item $index',
-                            style: Theme.of(context).textTheme.headline,
+                          child: FittedBox(
+                            fit: BoxFit.fitHeight,
+                            child: Text(
+                              '$index',
+                              style: Theme.of(context).textTheme.headline,
+                            ),
                           ),
                         ),
                       ),

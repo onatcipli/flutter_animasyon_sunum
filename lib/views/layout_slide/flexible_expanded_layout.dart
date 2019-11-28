@@ -46,12 +46,16 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     ),
                     FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Text('''
-  Flexible eğer hiç bir özellik belirtilmediyse
-  çocuğu kadar alan kaplar Expanded Row veya Column içindeki 
-  kalan alanı kaplar Expanded ve Flexible'ın flex özellikleride 
-  Row yada Column'ı belli oranlarda kullanmaya yarar.
-                      '''),
+                      child: Text(
+                        '''
+  - Flexible eğer hiç bir özellik belirtilmediyse
+    child'ı kadar alan kaplar 
+  - Expanded Row veya Column içindeki 
+    kalan alanı kaplar 
+  - Expanded ve Flexible'ın flex özellikleride 
+    Row yada Column'ı belli oranlarda kullanmaya yarar.
+                      ''',
+                      ),
                     ),
                   ],
                 ),

@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Animasyon Sunumu',
+      title: 'Flutter Layout',
       home: Provider(
         builder: (context) => NavigationService(),
         child: LayoutTemplate(),

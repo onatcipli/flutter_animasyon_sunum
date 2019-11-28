@@ -34,6 +34,7 @@ class NavigationService {
     IntroPath,
     RowAndColumn,
     GridViewPath,
+    ListViewPath,
     StackLayoutPath,
     FlexibleExpanded,
     CenterLayoutPath,
