@@ -42,10 +42,13 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
                     ),
                     Expanded(
                       child: FittedBox(
-                        fit: BoxFit.fitHeight,
+                        fit: BoxFit.contain,
                         child: Text(
                           '''
-                          asdasd
+  FittedBox(
+    fit: ${_boxFit.toString()},
+    child: Text(_value ?? 'FittedBox'),
+  )    
                           ''',
                         ),
                       ),
