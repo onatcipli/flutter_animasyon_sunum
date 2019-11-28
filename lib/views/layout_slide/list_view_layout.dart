@@ -50,8 +50,12 @@ class _ListViewLayoutState extends State<ListViewLayout> {
       100,
       (index) {
         return ListTile(
-          title: Text(index.toString()),
-        );
+          title: Text('title \$index'),
+          trailing: Text('trailing'),
+          subtitle: Text('subtitle'),
+          leading: Text('leading'),
+          contentPadding: EdgeInsets.all(8),
+        )
       },
     ),
   )

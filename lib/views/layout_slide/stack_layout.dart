@@ -23,6 +23,9 @@ class _StackLayoutState extends State<StackLayout> {
     Alignment.bottomRight,
   ];
 
+  double _bottom = 0;
+  double _right = 0;
+
   @override
   void initState() {
     _stackFit = StackFit.values.first;
@@ -71,7 +74,7 @@ class _StackLayoutState extends State<StackLayout> {
       buildStackChild(size: 100,
           text: "3", color: Colors.green),
       Positioned(
-          bottom: 0,right: 0,
+          bottom: $_bottom,right: $_right,
           child: buildStackChild(size: 50,
           text: "4", color: Colors.amber),),
     ],
@@ -91,8 +94,8 @@ class _StackLayoutState extends State<StackLayout> {
                     buildStackChild(size: 150, text: "2", color: Colors.orange),
                     buildStackChild(size: 100, text: "3", color: Colors.green),
                     Positioned(
-                        bottom: 0,
-                        right: 0,
+                        bottom: _bottom,
+                        right: _right,
                         child: buildStackChild(
                             size: 50, text: "4", color: Colors.amber)),
                   ],
@@ -150,6 +153,28 @@ class _StackLayoutState extends State<StackLayout> {
                       );
                     }).toList(),
                   ),
+                  Slider(
+                    label: 'Bottom',
+                    value: _bottom,
+                    onChanged: (double value) {
+                      setState(() {
+                        _bottom = value;
+                      });
+                    },
+                    min: 0,
+                    max: 550,
+                  ),
+                  Slider(
+                    label: 'Right',
+                    value: _right,
+                    onChanged: (double value) {
+                      setState(() {
+                        _right = value;
+                      });
+                    },
+                    min: 0,
+                    max: 250,
+                  )
                 ],
               ),
               Expanded(
