@@ -7,7 +7,8 @@ class IntroDart extends StatelessWidget {
     return SlideStack(
       children: <Widget>[
         Align(
-          child: SingleChildScrollView(
+          child: DefaultTextStyle(
+            style: Theme.of(context).textTheme.title.copyWith(fontSize: 35),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -16,48 +17,18 @@ class IntroDart extends StatelessWidget {
                   style: Theme.of(context).textTheme.title,
                 ),
                 Text(
-                  '- Row',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Column',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Stack',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- GridView',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Expanded, Flexible',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- FittedBox',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- LayoutBuilder',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Center',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Align',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Positioned',
-                  style: TextStyle(fontSize: 40),
-                ),
-                Text(
-                  '- Scrollables',
-                  style: TextStyle(fontSize: 40),
+                  '''
+                  
+    Birden fazla çocuğu           Tek çocuğu olan widgetlar 
+    olabilen widgetlar    
+    
+    
+    - Column                      - Center, Expanded
+    - Row                            - Container, Flexible
+    - ListView                     - ListTile, Padding
+    - GridView                    - FittedBox, LayoutBuilder
+    - Stack                          - Align, Positioned
+                  ''',
                 ),
               ],
             ),

@@ -34,27 +34,29 @@ class _StackLayoutState extends State<StackLayout> {
   Widget build(BuildContext context) {
     return SlideStack(
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Expanded(
-              flex: 5,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: FittedBox(
-                      fit: BoxFit.fitHeight,
-                      child: Text('Stack      '),
+        DefaultTextStyle(
+          style: Theme.of(context).textTheme.title,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
+                flex: 5,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: FittedBox(
+                        fit: BoxFit.fitHeight,
+                        child: Text('Stack      '),
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.fitHeight,
-                      child: Text('''
+                    Expanded(
+                      child: FittedBox(
+                        fit: BoxFit.fitHeight,
+                        child: Text('''
   Stack widget'ı sayesinde istediğimiz                
   widget'ları üst üste koyabiliyoruz
   
@@ -63,98 +65,99 @@ class _StackLayoutState extends State<StackLayout> {
     alignment: ${_alignment.toString()},
     children: <Widget>[
       buildStackChild(size: 200,
-        text: "1",color: Colors.blue),
+          text: "1",color: Colors.blue),
       buildStackChild(size: 150,
-        text: "2", color: Colors.orange),
+          text: "2", color: Colors.orange),
       buildStackChild(size: 100,
-        text: "3", color: Colors.green),
+          text: "3", color: Colors.green),
       Positioned(
-        bottom: 0,right: 0,
-        child: buildStackChild(size: 50,
-        text: "4", color: Colors.amber),),
+          bottom: 0,right: 0,
+          child: buildStackChild(size: 50,
+          text: "4", color: Colors.amber),),
     ],
   )
-                      '''),
+                        '''),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            MobileDevice(
-              child: Stack(
-                fit: _stackFit,
-                alignment: _alignment,
+              MobileDevice(
+                child: Stack(
+                  fit: _stackFit,
+                  alignment: _alignment,
+                  children: <Widget>[
+                    buildStackChild(size: 200, text: "1", color: Colors.blue),
+                    buildStackChild(size: 150, text: "2", color: Colors.orange),
+                    buildStackChild(size: 100, text: "3", color: Colors.green),
+                    Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: buildStackChild(
+                            size: 50, text: "4", color: Colors.amber)),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  buildStackChild(size: 200, text: "1", color: Colors.blue),
-                  buildStackChild(size: 150, text: "2", color: Colors.orange),
-                  buildStackChild(size: 100, text: "3", color: Colors.green),
-                  Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: buildStackChild(
-                          size: 50, text: "4", color: Colors.amber)),
+                  DropdownButton<StackFit>(
+                    value: _stackFit,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (StackFit newValue) {
+                      setState(() {
+                        _stackFit = newValue;
+                      });
+                    },
+                    items: StackFit.values
+                        .map<DropdownMenuItem<StackFit>>((StackFit value) {
+                      return DropdownMenuItem<StackFit>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
+                  ),
+                  DropdownButton<Alignment>(
+                    value: _alignment,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (Alignment newValue) {
+                      setState(() {
+                        _alignment = newValue;
+                      });
+                    },
+                    items: _alignmentValues
+                        .map<DropdownMenuItem<Alignment>>((Alignment value) {
+                      return DropdownMenuItem<Alignment>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
+                  ),
                 ],
               ),
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                DropdownButton<StackFit>(
-                  value: _stackFit,
-                  icon: Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: TextStyle(color: Colors.blue),
-                  underline: Container(
-                    height: 2,
-                    color: Colors.blueGrey,
-                  ),
-                  onChanged: (StackFit newValue) {
-                    setState(() {
-                      _stackFit = newValue;
-                    });
-                  },
-                  items: StackFit.values
-                      .map<DropdownMenuItem<StackFit>>((StackFit value) {
-                    return DropdownMenuItem<StackFit>(
-                      value: value,
-                      child: Text(value.toString()),
-                    );
-                  }).toList(),
-                ),
-                DropdownButton<Alignment>(
-                  value: _alignment,
-                  icon: Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: TextStyle(color: Colors.blue),
-                  underline: Container(
-                    height: 2,
-                    color: Colors.blueGrey,
-                  ),
-                  onChanged: (Alignment newValue) {
-                    setState(() {
-                      _alignment = newValue;
-                    });
-                  },
-                  items: _alignmentValues
-                      .map<DropdownMenuItem<Alignment>>((Alignment value) {
-                    return DropdownMenuItem<Alignment>(
-                      value: value,
-                      child: Text(value.toString()),
-                    );
-                  }).toList(),
-                ),
-              ],
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(),
-            ),
-          ],
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+            ],
+          ),
         )
       ],
     );
