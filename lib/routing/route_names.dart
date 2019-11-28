@@ -15,3 +15,5 @@ const String CenterLayoutPath = 'centerLayout';
 const String StackLayoutPath = 'stackLayout';
 
 const String WhatsAppClonePath = 'whatsAppClone';
+
+const String FittedBoxLayoutPath = 'fittedBoxLayoutPath';
