@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Chat {
   int id;
   String name;
@@ -42,7 +44,7 @@ List<Chat> chats = [
       image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhv4QVnYLBBbGGPxi8Zgr1YL9j_AR44XU0ifZBKXmGBMSIw1SS&s",
       isSeen: false,
-      lastMessage: "Bro bu sayfalar hep kayıyor"),
+      lastMessage: "Kanka saat kaçta okulda oluyoruz ?"),
   Chat(
       id: 1,
       name: 'Gazihan Alankuş',
@@ -50,7 +52,7 @@ List<Chat> chats = [
       image:
           "https://odin-oasis.izmirekonomi.edu.tr/images/photos/5e57d811756b8ab5f4f748a620ff72e3102a2f21.jpg",
       isSeen: true,
-      lastMessage: "Flutter İzmir Etkinliği için sunumun hazır mı ?"),
+      lastMessage: "Harika, Teşekkürler!"),
   Chat(
       id: 2,
       name: 'Can Taşpınar',
@@ -58,5 +60,8 @@ List<Chat> chats = [
       image:
           "https://miro.medium.com/fit/c/256/256/1*piA_JsteMHIyYko4y4uMTw.jpeg",
       isSeen: false,
-      lastMessage: "Kanka provider lazımsa sarayım"),
+      lastMessage: "Selam!"),
 ];
+
+const Color whatsAppTealGreen = Color(0xff075E54);
+const Color whatsAppLightGreen = Color(0xff25D366);

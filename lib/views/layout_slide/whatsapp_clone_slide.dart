@@ -8,26 +8,34 @@ class WhatsAppCloneSlide extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
+          child: Row(
             children: <Widget>[
-              Text(
-                'WhatsApp: workshop',
-                style: Theme.of(context).textTheme.title,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Text(
+                    'WhatsApp: workshop',
+                    style: Theme.of(context).textTheme.title,
+                  ),
+                  SizedBox(height: 10,),
+                  DefaultTextStyle(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text('Kullanacağımız widgetlar: '),
+                        Text('- TabView'),
+                        Text('- TabBar'),
+                        Text('- Tab'),
+                      ],
+                    ), style: Theme.of(context).textTheme.title.copyWith(fontSize: 30),
+                  ),
+                ],
               ),
-              SizedBox(height: 10,),
-              DefaultTextStyle(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text('Kullanacağımız widgetlar: '),
-                    Text('- TabView'),
-                    Text('- TabBar'),
-                    Text('- Tab'),
-                  ],
-                ), style: Theme.of(context).textTheme.title.copyWith(fontSize: 30),
-              ),
+             //TODO: Display WhatsApp
+             // MobileDevice(
+             //   child: WhatsApp(),
+             // )
             ],
           ),
         ),
