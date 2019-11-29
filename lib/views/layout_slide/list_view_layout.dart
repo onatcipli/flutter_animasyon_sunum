@@ -43,7 +43,7 @@ class _ListViewLayoutState extends State<ListViewLayout> {
                     Expanded(
                       child: FittedBox(
                         fit: BoxFit.fitHeight,
-                        child: Text(
+                        child: _type == 'ListTile' ?  Text(
                           '''
   ListView(
     children: List.generate(
@@ -60,6 +60,28 @@ class _ListViewLayoutState extends State<ListViewLayout> {
     ),
   )
                           ''',
+                        ): Text(
+                            '''
+  ListView(
+    children: List.generate(
+      100,
+      (index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              elevation: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Center(
+                  child: Text(index.toString()),
+                ),
+              ),
+            ),
+          );
+      },
+    ),
+  )
+                            ''',
                         ),
                       ),
                     ),

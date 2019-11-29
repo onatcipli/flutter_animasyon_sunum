@@ -8,7 +8,7 @@ class NavBarLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 80,
-      width: 200,
+      width: 400,
       child: _Logo(),
     );
   }
@@ -19,9 +19,15 @@ class _Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      width: 150,
       child: Row(
         children: <Widget>[
+          Image.network(
+            'flutter_izmir_logo.png',
+            fit: BoxFit.fitHeight,
+          ),
+          SizedBox(
+            width: 10,
+          ),
           FittedBox(
             child: Text("FLUTTER İZMİR",
                 style: Theme.of(context).textTheme.display1),

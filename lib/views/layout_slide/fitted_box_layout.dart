@@ -12,6 +12,8 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
 
   String _value;
 
+  var _type = 'text';
+
   @override
   void initState() {
     _boxFit = BoxFit.values.first;
@@ -43,14 +45,23 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
                     Expanded(
                       child: FittedBox(
                         fit: BoxFit.contain,
-                        child: Text(
-                          '''
+                        child: _type == 'text'
+                            ? Text(
+                                '''
   FittedBox(
     fit: ${_boxFit.toString()},
     child: Text(_value ?? 'FittedBox'),
   )    
                           ''',
-                        ),
+                              )
+                            : Text(
+                                '''
+  FittedBox(
+    fit: ${_boxFit.toString()},
+    child: FlutterLogo(),
+  )                              
+                          ''',
+                              ),
                       ),
                     ),
                   ],
@@ -60,12 +71,15 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
             MobileDevice(
               child: FittedBox(
                 fit: _boxFit,
-                child: Text(_value ?? 'FittedBox'),
+                child: _type == 'text'
+                    ? Text(_value ?? 'FittedBox')
+                    : FlutterLogo(),
               ),
             ),
             Flexible(
-              flex: 2,
-              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+              flex: 1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
                     onChanged: (String value) {
@@ -94,6 +108,29 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
                       return DropdownMenuItem<BoxFit>(
                         value: value,
                         child: Text(value.toString()),
+                      );
+                    }).toList(),
+                  ),
+                  DropdownButton<String>(
+                    value: _type,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (String newValue) {
+                      setState(() {
+                        _type = newValue;
+                      });
+                    },
+                    items: ['text', 'flutter_logo']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
                       );
                     }).toList(),
                   ),

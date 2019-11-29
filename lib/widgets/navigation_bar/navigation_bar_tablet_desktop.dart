@@ -32,6 +32,10 @@ class NavigationBarTabletDesktop extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
+              NavBarItem('Twitter', twitterUrl),
+              SizedBox(
+                width: 60,
+              ),
               NavBarItem('Medium', mediumUrl),
               SizedBox(
                 width: 60,

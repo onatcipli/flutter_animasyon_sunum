@@ -2,6 +2,7 @@ import 'package:animation_presentation/routing/route_names.dart';
 import 'package:animation_presentation/views/home/home_view.dart';
 import 'package:animation_presentation/views/intro/intro.dart';
 import 'package:animation_presentation/views/layout_slide/center_flexible_expanded.dart';
+import 'package:animation_presentation/views/layout_slide/container_layout.dart';
 import 'package:animation_presentation/views/layout_slide/fitted_box_layout.dart';
 import 'package:animation_presentation/views/layout_slide/flexible_expanded_layout.dart';
 import 'package:animation_presentation/views/layout_slide/grid_view_layout.dart';
@@ -19,6 +20,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       break;
     case IntroPath:
       return _getPageRoute(IntroDart(), settings.name);
+    case ContainerPath:
+      return _getPageRoute(ContainerLayout(), settings.name);
     case RowAndColumn:
       return _getPageRoute(RowColumnLayout(), settings.name);
     case FlexibleExpanded:
@@ -39,8 +42,23 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   }
 }
 
-PageRoute _getPageRoute(Widget child, String routeName) {
-  return _FadeRoute(child: child, routeName: routeName);
+Route _getPageRoute(Widget child,String routeName) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => child,
+    settings: RouteSettings(name: "$routeName"),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(0.0, 1.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }
 
 class _FadeRoute extends PageRouteBuilder {

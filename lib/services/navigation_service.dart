@@ -32,12 +32,12 @@ class NavigationService {
   List<String> routes = [
     HomeRoute,
     IntroPath,
+    ContainerPath,
     RowAndColumn,
     GridViewPath,
     ListViewPath,
     StackLayoutPath,
     FlexibleExpanded,
-    CenterLayoutPath,
     FittedBoxLayoutPath,
     WhatsAppClonePath,
   ];

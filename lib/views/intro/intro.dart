@@ -19,14 +19,11 @@ class IntroDart extends StatelessWidget {
                 Text(
                   '''
                   
-    Birden fazla çocuğu           Tek çocuğu olan widgetlar 
-    olabilen widgetlar    
-    
     
     - Column                      - Center, Expanded
     - Row                            - Container, Flexible
     - ListView                     - ListTile, Padding
-    - GridView                    - FittedBox, LayoutBuilder
+    - GridView                    - FittedBox
     - Stack                          - Align, Positioned
                   ''',
                 ),
