@@ -53,7 +53,9 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
                       padding: const EdgeInsets.all(18.0),
                       child: FittedBox(
                         fit: BoxFit.fitHeight,
-                        child: layoutType == 'Row' ? Text('Row   ') : Text('Column'),
+                        child: layoutType == 'Row'
+                            ? Text('Row   ')
+                            : Text('Column'),
                       ),
                     ),
                     Expanded(
@@ -107,106 +109,123 @@ class _RowColumnLayoutState extends State<RowColumnLayout> {
               SizedBox(
                 width: 15,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  DropdownButton<String>(
-                    value: layoutType,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+              Expanded(
+                flex: 3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: DropdownButton<String>(
+                        value: layoutType,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            layoutType = newValue;
+                          });
+                        },
+                        items: <String>[
+                          'Column',
+                          'Row',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (String newValue) {
-                      setState(() {
-                        layoutType = newValue;
-                      });
-                    },
-                    items: <String>[
-                      'Column',
-                      'Row',
-                    ].map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                  ),
-                  DropdownButton<MainAxisAlignment>(
-                    value: _mainAxisAlignment,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: DropdownButton<MainAxisAlignment>(
+                        value: _mainAxisAlignment,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (MainAxisAlignment newValue) {
+                          setState(() {
+                            _mainAxisAlignment = newValue;
+                          });
+                        },
+                        items: MainAxisAlignment.values
+                            .map<DropdownMenuItem<MainAxisAlignment>>(
+                                (MainAxisAlignment value) {
+                          return DropdownMenuItem<MainAxisAlignment>(
+                            value: value,
+                            child: Text(value.toString()),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (MainAxisAlignment newValue) {
-                      setState(() {
-                        _mainAxisAlignment = newValue;
-                      });
-                    },
-                    items: MainAxisAlignment.values
-                        .map<DropdownMenuItem<MainAxisAlignment>>(
-                            (MainAxisAlignment value) {
-                      return DropdownMenuItem<MainAxisAlignment>(
-                        value: value,
-                        child: Text(value.toString()),
-                      );
-                    }).toList(),
-                  ),
-                  DropdownButton<CrossAxisAlignment>(
-                    value: _crossAxisAlignment,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: DropdownButton<CrossAxisAlignment>(
+                        value: _crossAxisAlignment,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (CrossAxisAlignment newValue) {
+                          setState(() {
+                            _crossAxisAlignment = newValue;
+                          });
+                        },
+                        items: crossValues
+                            .map<DropdownMenuItem<CrossAxisAlignment>>(
+                                (CrossAxisAlignment value) {
+                          return DropdownMenuItem<CrossAxisAlignment>(
+                            value: value,
+                            child: Text(value.toString()),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (CrossAxisAlignment newValue) {
-                      setState(() {
-                        _crossAxisAlignment = newValue;
-                      });
-                    },
-                    items: crossValues.map<DropdownMenuItem<CrossAxisAlignment>>(
-                        (CrossAxisAlignment value) {
-                      return DropdownMenuItem<CrossAxisAlignment>(
-                        value: value,
-                        child: Text(value.toString()),
-                      );
-                    }).toList(),
-                  ),
-                  DropdownButton<MainAxisSize>(
-                    value: _mainAxisSize,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: DropdownButton<MainAxisSize>(
+                        value: _mainAxisSize,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (MainAxisSize newValue) {
+                          setState(() {
+                            _mainAxisSize = newValue;
+                          });
+                        },
+                        items: MainAxisSize.values
+                            .map<DropdownMenuItem<MainAxisSize>>(
+                                (MainAxisSize value) {
+                          return DropdownMenuItem<MainAxisSize>(
+                            value: value,
+                            child: Text(value.toString()),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (MainAxisSize newValue) {
-                      setState(() {
-                        _mainAxisSize = newValue;
-                      });
-                    },
-                    items: MainAxisSize.values
-                        .map<DropdownMenuItem<MainAxisSize>>(
-                            (MainAxisSize value) {
-                      return DropdownMenuItem<MainAxisSize>(
-                        value: value,
-                        child: Text(value.toString()),
-                      );
-                    }).toList(),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Expanded(
                 flex: 1,

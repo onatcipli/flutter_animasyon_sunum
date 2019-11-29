@@ -65,7 +65,7 @@ class _FittedBoxLayoutState extends State<FittedBoxLayout> {
             ),
             Flexible(
               flex: 2,
-              child: Column(
+              child: Column(mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
                     onChanged: (String value) {

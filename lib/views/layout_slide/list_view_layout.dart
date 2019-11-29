@@ -114,35 +114,35 @@ class _ListViewLayoutState extends State<ListViewLayout> {
                   ),
                 ),
               ),
-              Flexible(
-                flex: 1,
-                child: DropdownButton<String>(
-                  value: _type,
-                  icon: Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: TextStyle(color: Colors.blue),
-                  underline: Container(
-                    height: 2,
-                    color: Colors.blueGrey,
-                  ),
-                  onChanged: (String newValue) {
-                    setState(() {
-                      _type = newValue;
-                    });
-                  },
-                  items: ['ListTile', 'Card']
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                ),
-              ),
+              SizedBox(width: 10,),
               Expanded(
-                flex: 1,
-                child: Container(),
+                flex: 2,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: DropdownButton<String>(
+                    value: _type,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (String newValue) {
+                      setState(() {
+                        _type = newValue;
+                      });
+                    },
+                    items: ['ListTile', 'Card']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
               ),
             ],
           ),

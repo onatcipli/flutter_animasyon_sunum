@@ -32,8 +32,18 @@ class _CenterLayoutState extends State<CenterLayout> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Expanded(
-              child: Container(),
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text(
+                  '''
+  return Center(
+    child: child,
+  );
+                  ''',
+                ),
+              ),
             ),
+            SizedBox(width: 15,),
             MobileDevice(
               child: _getChild(
                 child: Container(color: Colors.orange, child: Text('MyText')),
@@ -51,7 +61,7 @@ class _CenterLayoutState extends State<CenterLayout> {
                   icon: Icon(Icons.arrow_downward),
                   iconSize: 24,
                   elevation: 16,
-                  style: TextStyle(color: Colors.blue),
+                  style: TextStyle(color: Colors.blue,fontSize: 40),
                   underline: Container(
                     height: 2,
                     color: Colors.blueGrey,

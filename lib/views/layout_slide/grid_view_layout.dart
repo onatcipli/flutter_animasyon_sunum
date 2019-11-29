@@ -92,29 +92,33 @@ class _GridViewLayoutState extends State<GridViewLayout> {
                   }),
                 ),
               ),
-              Flexible(
+              SizedBox(width: 10,),
+              Expanded(
                 flex: 1,
-                child: DropdownButton<int>(
-                  value: _crossAxisCount,
-                  icon: Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: TextStyle(color: Colors.blue),
-                  underline: Container(
-                    height: 2,
-                    color: Colors.blueGrey,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: DropdownButton<int>(
+                    value: _crossAxisCount,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (int newValue) {
+                      setState(() {
+                        _crossAxisCount = newValue;
+                      });
+                    },
+                    items: [1, 2, 3, 4, 5].map<DropdownMenuItem<int>>((int value) {
+                      return DropdownMenuItem<int>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
                   ),
-                  onChanged: (int newValue) {
-                    setState(() {
-                      _crossAxisCount = newValue;
-                    });
-                  },
-                  items: [1, 2, 3, 4, 5].map<DropdownMenuItem<int>>((int value) {
-                    return DropdownMenuItem<int>(
-                      value: value,
-                      child: Text(value.toString()),
-                    );
-                  }).toList(),
                 ),
               ),
               Expanded(

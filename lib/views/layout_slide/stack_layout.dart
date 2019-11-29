@@ -1,3 +1,4 @@
+import 'package:animation_presentation/views/layout_slide/fitted_box_layout.dart';
 import 'package:animation_presentation/views/layout_slide/mobile_device.dart';
 import 'package:animation_presentation/widgets/slide_stack.dart/slide_stack.dart';
 import 'package:flutter/material.dart';
@@ -104,78 +105,96 @@ class _StackLayoutState extends State<StackLayout> {
               SizedBox(
                 width: 15,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  DropdownButton<StackFit>(
-                    value: _stackFit,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+              Expanded(
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    FittedBox(
+                      fit:BoxFit.fitWidth,
+                      child: DropdownButton<StackFit>(
+                        value: _stackFit,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (StackFit newValue) {
+                          setState(() {
+                            _stackFit = newValue;
+                          });
+                        },
+                        items: StackFit.values
+                            .map<DropdownMenuItem<StackFit>>((StackFit value) {
+                          return DropdownMenuItem<StackFit>(
+                            value: value,
+                            child: Text(value.toString()),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (StackFit newValue) {
-                      setState(() {
-                        _stackFit = newValue;
-                      });
-                    },
-                    items: StackFit.values
-                        .map<DropdownMenuItem<StackFit>>((StackFit value) {
-                      return DropdownMenuItem<StackFit>(
-                        value: value,
-                        child: Text(value.toString()),
-                      );
-                    }).toList(),
-                  ),
-                  DropdownButton<Alignment>(
-                    value: _alignment,
-                    icon: Icon(Icons.arrow_downward),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: TextStyle(color: Colors.blue),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.blueGrey,
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: DropdownButton<Alignment>(
+                        value: _alignment,
+                        icon: Icon(Icons.arrow_downward),
+                        iconSize: 24,
+                        elevation: 16,
+                        style: TextStyle(color: Colors.blue),
+                        underline: Container(
+                          height: 2,
+                          color: Colors.blueGrey,
+                        ),
+                        onChanged: (Alignment newValue) {
+                          setState(() {
+                            _alignment = newValue;
+                          });
+                        },
+                        items: _alignmentValues
+                            .map<DropdownMenuItem<Alignment>>((Alignment value) {
+                          return DropdownMenuItem<Alignment>(
+                            value: value,
+                            child: Text(value.toString()),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                    onChanged: (Alignment newValue) {
-                      setState(() {
-                        _alignment = newValue;
-                      });
-                    },
-                    items: _alignmentValues
-                        .map<DropdownMenuItem<Alignment>>((Alignment value) {
-                      return DropdownMenuItem<Alignment>(
-                        value: value,
-                        child: Text(value.toString()),
-                      );
-                    }).toList(),
-                  ),
-                  Slider(
-                    label: 'Bottom',
-                    value: _bottom,
-                    onChanged: (double value) {
-                      setState(() {
-                        _bottom = value;
-                      });
-                    },
-                    min: 0,
-                    max: 550,
-                  ),
-                  Slider(
-                    label: 'Right',
-                    value: _right,
-                    onChanged: (double value) {
-                      setState(() {
-                        _right = value;
-                      });
-                    },
-                    min: 0,
-                    max: 250,
-                  )
-                ],
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Slider(
+                        label: 'Bottom $_bottom',
+                        value: _bottom,
+                        onChanged: (double value) {
+                          setState(() {
+                            _bottom = value;
+                          });
+                        },
+                        divisions: 50,
+                        min: 0,
+                        max: 500,
+                      ),
+                    ),
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Slider(
+                        label: 'Right $_right',
+                        value: _right,
+                        divisions: 25,
+                        onChanged: (double value) {
+                          setState(() {
+                            _right = value;
+                          });
+                        },
+                        min: 0,
+                        max: 250,
+                      ),
+                    )
+                  ],
+                ),
               ),
               Expanded(
                 flex: 1,
