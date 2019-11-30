@@ -39,7 +39,7 @@ class _ContainerLayoutState extends State<ContainerLayout> {
 
   var _color;
 
-  var _boxShape;
+  BoxShape _boxShape;
 
   Alignment _alignment;
 
@@ -204,6 +204,30 @@ class _ContainerLayoutState extends State<ContainerLayout> {
                     divisions: 10,
                     min: 0,
                     max: 10,
+                  ),
+                  DropdownButton<BoxShape>(
+                    value: _boxShape,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: TextStyle(color: Colors.blue),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.blueGrey,
+                    ),
+                    onChanged: (BoxShape newValue) {
+                      setState(() {
+                        _boxShape = newValue;
+                      });
+                    },
+                    items: BoxShape.values
+                        .map<DropdownMenuItem<BoxShape>>(
+                            (BoxShape value) {
+                      return DropdownMenuItem<BoxShape>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
                   ),
                   DropdownButton<BorderStyle>(
                     value: _borderStyle,
