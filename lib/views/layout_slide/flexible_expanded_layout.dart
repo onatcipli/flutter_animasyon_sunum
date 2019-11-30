@@ -32,13 +32,12 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(18.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: FittedBox(
                         fit: BoxFit.fitWidth,
                         child: Text(
                           '''
-  Flexible 
-  and 
+  Flexible ve 
   Expanded
                           ''',
                         ),
@@ -176,7 +175,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                       return DropdownMenuItem<int>(
                         value: value,
-                        child: Text('first flex: ' + value.toString()),
+                        child: Text('1. flex: ' + value.toString()),
                       );
                     }).toList(),
                   ),
@@ -198,7 +197,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                       return DropdownMenuItem<int>(
                         value: value,
-                        child: Text('second flex : ' + value.toString()),
+                        child: Text('2. flex : ' + value.toString()),
                       );
                     }).toList(),
                   ),
@@ -220,7 +219,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                       return DropdownMenuItem<int>(
                         value: value,
-                        child: Text('third flex : ' + value.toString()),
+                        child: Text('3. flex : ' + value.toString()),
                       );
                     }).toList(),
                   ),
@@ -242,7 +241,7 @@ class _FlexibleExpandedLayoutState extends State<FlexibleExpandedLayout> {
                     items: [1, 2, 3, 4].map<DropdownMenuItem<int>>((int value) {
                       return DropdownMenuItem<int>(
                         value: value,
-                        child: Text('fourth flex : ' + value.toString()),
+                        child: Text('4. flex : ' + value.toString()),
                       );
                     }).toList(),
                   ),

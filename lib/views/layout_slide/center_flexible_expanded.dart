@@ -12,8 +12,6 @@ class _CenterLayoutState extends State<CenterLayout> {
     'Center',
     'Flexible',
     'Expanded',
-    'Container',
-    'Container in a Column'
   ];
 
   String _state;
@@ -32,18 +30,49 @@ class _CenterLayoutState extends State<CenterLayout> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Expanded(
+              flex: 4,
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Text(
-                  '''
+                  _state == 'Center'
+                      ? '''
   return Center(
-    child: child,
+    child: Text('MyText'),
   );
-                  ''',
+                  '''
+                      : _state == 'Flexible'
+                          ? '''
+  return Column(
+    children: <Widget>[
+      Text('Other widgets'),
+      Text('Other widgets'),
+      Text('Other widgets'),
+      Flexible(
+        child: Text('MyText'),
+      ),
+    ],
+  );
+                '''
+                          : _state == 'Expanded'
+                              ? '''
+  return Column(
+    children: <Widget>[
+      Text('Other widgets'),
+      Text('Other widgets'),
+      Text('Other widgets'),
+      Expanded(
+        child: Text('MyText'),
+      ),
+    ],
+  );  
+                  '''
+                              : '',
                 ),
               ),
             ),
-            SizedBox(width: 15,),
+            SizedBox(
+              width: 15,
+            ),
             MobileDevice(
               child: _getChild(
                 child: Container(color: Colors.orange, child: Text('MyText')),
@@ -61,7 +90,7 @@ class _CenterLayoutState extends State<CenterLayout> {
                   icon: Icon(Icons.arrow_downward),
                   iconSize: 24,
                   elevation: 16,
-                  style: TextStyle(color: Colors.blue,fontSize: 40),
+                  style: TextStyle(color: Colors.blue, fontSize: 40),
                   underline: Container(
                     height: 2,
                     color: Colors.blueGrey,

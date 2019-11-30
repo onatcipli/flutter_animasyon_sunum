@@ -38,6 +38,7 @@ class NavigationService {
     ListViewPath,
     StackLayoutPath,
     FlexibleExpanded,
+    CenterLayoutPath,
     FittedBoxLayoutPath,
     WhatsAppClonePath,
   ];
